@@ -33,7 +33,7 @@ pipeline
 			steps
 			{
 				sh "git rev-parse --short HEAD > .git/commit-id"                        
-				commit_id = readFile('.git/commit-id')
+				sh 'commit_id = readFile('.git/commit-id') '
 			}
 		}	
 		stage("SLEEP")
