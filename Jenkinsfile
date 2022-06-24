@@ -17,6 +17,11 @@ pipeline
 				echo " BUILDING .. $BRANCH_NAME BRANCH "
 			}
 		}
+		satge("COMMIT ID")
+		{
+			sh "git rev-parse --short HEAD > .git/commit-id"                        
+			commit_id = readFile('.git/commit-id')
+		}
 		stage("SLEEP")
 		{
 			steps
