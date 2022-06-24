@@ -10,7 +10,7 @@ pipeline
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Sushil-Ohol/multibranch-sample-app.git']]])
 			}
 		}
-		stage
+		stage("ENVIRONMENT")
 		{
 			steps
 			{
