@@ -10,6 +10,16 @@ pipeline
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Sushil-Ohol/multibranch-sample-app.git']]])
 			}
 		}
+		stage
+		{
+			steps
+			{
+				
+        			scmVars = git branch: env.BRANCH_NAME, url: 'https://github.com/Sushil-Ohol/NEW-NIT-TEST.git'
+
+        			commitHash = scmVars.GIT_COMMIT
+			}
+		}
 		stage("BUILD")
 		{
 			steps
