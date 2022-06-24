@@ -14,10 +14,11 @@ pipeline
 		{
 			steps
 			{
-				
+				sh '''
         			scmVars = git branch: env.BRANCH_NAME, url: 'https://github.com/Sushil-Ohol/NEW-NIT-TEST.git'
 
         			commitHash = scmVars.GIT_COMMIT
+				'''
 			}
 		}
 		stage("BUILD")
