@@ -17,7 +17,7 @@ pipeline
 				echo " BUILDING .. $BRANCH_NAME BRANCH "
 			}
 		}
-		satge("COMMIT ID")
+		stage("COMMIT ID")
 		{	
 			steps
 			{
