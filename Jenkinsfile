@@ -18,10 +18,13 @@ pipeline
 			}
 		}
 		satge("COMMIT ID")
-		{
-			sh "git rev-parse --short HEAD > .git/commit-id"                        
-			commit_id = readFile('.git/commit-id')
-		}
+		{	
+			steps
+			{
+				sh "git rev-parse --short HEAD > .git/commit-id"                        
+				commit_id = readFile('.git/commit-id')
+			}
+		}	
 		stage("SLEEP")
 		{
 			steps
